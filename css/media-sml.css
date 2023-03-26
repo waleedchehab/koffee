@@ -1,0 +1,14 @@
+@media (max-width:600px) {
+    .service .container {
+        flex-direction: column;
+    }
+
+    .service .container .box {
+        flex-direction: column;
+    }
+
+    .offer .input-group {
+        width: 100%;
+        margin: 30px auto;
+    }
+}

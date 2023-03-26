@@ -1,0 +1,659 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* variables */
+:root {
+    --bg-color: #FFFBF2;
+    --par-color: #555555;
+    --title-color: #DA9F5B;
+    --alt-title: #D38D3C;
+    --head-color: #33211D;
+    --alt-head: #1B110F;
+    --overlay-color: #33211d8f;
+
+    --trans: 0.3s ease;
+}
+
+/* global rules */
+.container {
+    padding: 0 5%;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+section {
+    padding-bottom: 100px;
+}
+
+.title {
+    text-align: center;
+    padding: 200px 0 100px;
+}
+
+.title h2 {
+    color: var(--title-color);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.title h2::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    background-color: var(--title-color);
+
+    width: 2px;
+    height: 100px;
+}
+
+.title h1 {
+    font-size: 3em;
+    color: var(--alt-head);
+    text-transform: capitalize;
+    margin: 0.2em 0;
+}
+
+/* --------------------header-------------------- */
+header {
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    position: relative;
+}
+
+.bar-menu {
+    color: white;
+    font-size: 2em;
+    display: none;
+    cursor: pointer;
+}
+
+.main-nav {
+    display: flex;
+    text-transform: capitalize;
+    gap: 20px;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    font-size: 1.1em;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--title-color);
+}
+
+.main-nav li:nth-child(5) {
+    position: relative;
+}
+
+.main-nav li:nth-child(5) .right {
+    display: none;
+}
+
+.main-nav li:nth-child(5) i {
+    margin-left: 5px;
+}
+
+.main-nav li:nth-child(5):hover .sub-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+header .sub-nav {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background-color: white;
+
+}
+
+header .sub-nav li {
+    padding: 10px;
+}
+
+header .sub-nav a {
+    color: black;
+}
+
+.main-nav.display {
+    display: flex;
+}
+
+/* ------------------------landing--------------------- */
+.landing {
+    position: relative;
+    top: 0;
+    padding-bottom: 0;
+}
+
+.landing .image {
+    position: relative;
+}
+
+.landing img {
+    max-width: 100%;
+    position: relative;
+    top: 0;
+}
+
+.landing .image::after {
+    content: "";
+    background: url(../images/overlay-bottom.png);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    height: 15px;
+}
+
+.landing .overlay {
+    height: 100%;
+    width: 100%;
+    background-color: var(--overlay-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.landing .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.landing .text h2 {
+    color: var(--title-color);
+    text-transform: capitalize;
+}
+
+.landing .text h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 6em;
+    margin: 0.2em;
+}
+
+.landing h2 span {
+    color: white;
+    text-transform: uppercase;
+}
+
+
+/* ---------------------about---------------------- */
+.about {}
+
+.about .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.about .story h2 {
+    color: var(--head-color);
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.about .story h3 {
+    color: var(--head-color);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.about p {
+    color: var(--par-color);
+    margin-bottom: 20px;
+}
+
+.about .story a {
+    color: white;
+    background-color: var(--head-color);
+    padding: 10px 20px;
+    text-transform: capitalize;
+    margin-top: 10px;
+    display: block;
+    width: fit-content;
+}
+
+.about .story a:hover {
+    background-color: var(--alt-head);
+}
+
+.center img {
+    max-width: 100%;
+}
+
+.about .vision h2 {
+    color: var(--head-color);
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.about .vision h3 {
+    color: var(--head-color);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.about p {
+    color: var(--par-color);
+    margin-bottom: 20px;
+    line-height: 1.5em;
+}
+
+.about .vision i {
+    color: var(--title-color);
+    margin-right: 10px;
+}
+
+.about .vision a {
+    color: white;
+    background-color: var(--head-color);
+    padding: 10px 20px;
+    text-transform: capitalize;
+    margin-top: 10px;
+    display: block;
+    width: fit-content;
+}
+
+.about .vision a:hover {
+    background-color: var(--alt-head);
+}
+
+/* ------------------service------------------------ */
+.service {
+    padding-bottom: 100px;
+}
+
+.service .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service .container .box {
+    flex-basis: 48%;
+    display: flex;
+    gap: 10px;
+}
+
+.box img {
+    max-width: 100%;
+}
+
+.service .text {
+    width: 100%;
+}
+
+.service .text h2 {
+    color: var(--head-color);
+}
+
+.service .text i {
+    margin-right: 10px;
+    background-color: var(--title-color);
+    color: var(--alt-head);
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.service .text p {
+    color: var(--par-color);
+}
+
+
+/* -----------------------offer-------------------- */
+.offer {
+    background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(../images/bg.jpg);
+    height: 75vh;
+    padding: 80px 0;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.offer::before {
+    content: "";
+    background: url(../images/overlay-top.png);
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    z-index: 10;
+}
+
+.offer::after {
+    content: "";
+    background: url(../images/overlay-bottom.png);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    z-index: 10;
+}
+
+.offer .container {
+    text-align: center;
+}
+
+.offer h1 {
+    color: var(--title-color);
+    font-size: 4em;
+    margin: 0.2em 0;
+
+}
+
+.offer h2 {
+    color: white;
+    margin: 0.5em 0;
+    font-size: 1.8em;
+}
+
+.offer h3 {
+    color: white;
+    margin: 0.5em 0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.offer .input-group {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.offer input,
+button {
+    height: 50px;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+.offer button {
+    background-color: var(--title-color);
+    margin-left: 0px;
+}
+
+/* ---------------------menu---------------------- */
+.menu .container {
+    display: flex;
+    gap: 20px;
+}
+
+.menu .cat h2 {
+    color: var(--alt-head);
+    text-transform: capitalize;
+    font-size: 2em;
+    margin-bottom: 20px;
+
+}
+
+.menu .cat .box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu .cat .box .items {
+    display: flex;
+    position: relative;
+    gap: 20px;
+}
+
+.menu .items img {
+    /* position: relative; */
+    border-radius: 50%;
+    max-width: 100px;
+}
+
+.menu .items .price {
+    position: absolute;
+    top: -10px;
+    left: 65px;
+    background-color: var(--title-color);
+    color: var(--alt-head);
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 1.5em;
+}
+
+.menu .item h2 {
+    text-transform: capitalize;
+    color: var(--alt-head);
+    font-size: 1.5em;
+}
+
+.menu .item p {
+    color: var(--par-color);
+}
+
+/* --------------------------booking------------------- */
+.booking .content {
+    display: flex;
+    background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(../images/bg.jpg);
+    /* height: 100vh; */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.booking .text {
+    padding: 0 20px;
+
+}
+
+.booking .text h1 {
+    color: var(--title-color);
+    font-size: 4em;
+
+}
+
+.booking .text h2,
+p,
+h4 {
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.5em;
+}
+
+.booking .text i {
+    color: var(--title-color);
+    margin-right: 10px;
+}
+
+
+
+.booking .form-group {
+    background-color: var(--head-color);
+    flex: 0 0 50%;
+    height: 100%;
+    padding: 0 20px;
+
+}
+
+.booking .form-group h1 {
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 2.5em;
+    padding: 20px 0;
+}
+
+.booking form {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking form input,
+select,
+button {
+    height: 50px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    padding: 10px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid var(--title-color);
+    color: var(--par-color);
+    transition: var(--trans);
+}
+
+.booking form input:focus {
+    outline: 2px solid var(--alt-title);
+}
+
+.booking form button {
+    background-color: var(--title-color);
+    color: var(--alt-head);
+    transition: var(--trans);
+}
+
+.booking form button:hover {
+    background-color: var(--alt-title);
+}
+
+/* -------------------testimonial--------------- */
+
+.test .container {
+    display: flex;
+
+}
+
+.test .box {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.test .data {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.test .data img {
+    border-radius: 50%;
+
+}
+
+.test .name h3 {
+    text-transform: capitalize;
+}
+
+.test .name h4 {
+    color: var(--par-color);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.test .text p {
+    color: var(--par-color);
+}
+
+/* --------------------footer------------------------ */
+footer {
+    background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(../images/bg.jpg);
+    padding-top: 50px;
+    width: 100%;
+}
+
+footer .container {
+    color: white;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+footer .touch {
+    flex: 0 0 25%;
+}
+
+footer h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+footer .container i {
+    margin-right: 10px;
+}
+
+footer .social a {
+    color: white;
+    border: 1px solid white;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+
+}
+
+footer .social i {
+    text-align: center;
+    padding: 5px;
+    font-size: 1.5em;
+}
+
+footer form {
+    display: flex;
+    align-items: stretch;
+}
+
+footer form input {
+    height: 50px;
+    border: 1px solid var(--title-color);
+    outline: none;
+    padding: 0 10px;
+    width: 50%;
+
+}
+
+footer form button {
+    background-color: var(--title-color);
+    color: var(--alt-head);
+}
